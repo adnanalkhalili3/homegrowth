@@ -53,9 +53,9 @@
   .review-image { position:relative; aspect-ratio:4/3; }
   .review-image .play { width:44px; height:44px; }
   .review-image .play::after { border-left-width:12px; border-top-width:8px; border-bottom-width:8px; }
-  .review-image::after { content:""; position:absolute; inset:0; background:rgba(25,31,39,.28); pointer-events:none; }
+  .review-image::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(18,25,34,.43),rgba(18,25,34,.54)); pointer-events:none; }
   button.play { border:0; cursor:pointer; z-index:1; backdrop-filter:blur(4px); background:rgba(20,22,26,.65); }
-  button.play:hover { background:var(--accent); }
+  button.play:hover { background:rgba(20,22,26,.82); }
   button.play:focus-visible { outline:3px solid var(--accent); outline-offset:4px; }
   .player-bar { position:absolute; z-index:1; bottom:0; left:0; right:0; padding:18px 10px 8px; color:white; background:linear-gradient(transparent,#000b); font-size:10px; display:flex; gap:8px; align-items:center; pointer-events:none; }
   .player-progress { height:3px; background:#ffffff60; flex:1; border-radius:2px; }
