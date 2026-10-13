@@ -106,6 +106,17 @@
   .review h3 { font-size:16px; }
   .review p { font-size:13px; }
   @media(max-width:700px) { .video .play { width:72px; height:72px; } .video .play::after { border-left-width:20px; border-top-width:13px; border-bottom-width:13px; } }
+  /* fit full video in first screen */
+  header { padding:6px 0 0; }
+  .logo img { height:36px; }
+  .brand-name { display:none; }
+  .hero { padding:4px 0 6px; }
+  .hero h1 { font-size:clamp(28px,min(4.4vw,7vh),58px); margin-bottom:6px; }
+  .hero p { font-size:clamp(14px,min(1.5vw,2.6vh),19px); line-height:1.4; }
+  .cta { margin:0 0 8px; }
+  .book-btn { padding:10px 40px; font-size:clamp(17px,min(2vw,3.4vh),22px); }
+  .video h2 { margin-bottom:4px; }
+  .video-wrap { --fit:calc(100vh - 300px); height:min(calc((100vw - 48px)*9/16),1080px*9/16,var(--fit)); width:auto; max-width:100%; aspect-ratio:16/9; margin:0 auto; }
 </style>
 </head>
 <body>
@@ -191,6 +202,10 @@
 b.addEventListener('click',function(){var open=p.hidden;p.hidden=!open;b.setAttribute('aria-expanded',open);
 if(open){var f=p.querySelector('iframe');if(!f.src)f.src=f.dataset.src;p.scrollIntoView({behavior:'smooth',block:'start'});}
 b.textContent=open?'Hide calendar ×':'Book a call →';});})();
+</script>
+<script>
+(function(){var v=document.querySelector('.video-wrap');function fit(){v.style.setProperty('--fit','99999px');var top=v.getBoundingClientRect().top+window.scrollY;v.style.setProperty('--fit',Math.max(180,window.innerHeight-top-10)+'px');}
+fit();addEventListener('resize',fit);addEventListener('load',fit);})();
 </script>
 </body>
 </html>
